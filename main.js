@@ -102,18 +102,6 @@ export function getEmployeeChartContent(employees) {
         }
     }
 
-    function formatAndSortData(obj){
-        const res = [];
-
-        for(const key in obj){
-            res.push({label: key, value: obj[key]});
-        }
-
-        res.sort((a,b) => b.value-a.value);
-
-        return res;
-    }
-
     return {
         dtoOut: {
             chartData: {
@@ -126,4 +114,20 @@ export function getEmployeeChartContent(employees) {
         }
     };
 }
+/**
+ * Converts to a format {label, value} and sorts
+ * @param {Object} obj
+ * @returns {Array<{label: string, value: number}>}
+ */
+export function formatAndSortData(obj){
+        const res = [];
+
+        for(const key in obj){
+            res.push({label: key, value: obj[key]});
+        }
+
+        res.sort((a,b) => b.value-a.value);
+
+        return res;
+    }
 
