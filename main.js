@@ -53,6 +53,12 @@ export function generateEmployeeData(dtoIn) {
   return dtoOut;
 }
 
+/**
+ * Generate random age from <minAge;maxAge>
+ * @param {number} minAge 
+ * @param {number} maxAge 
+ * @returns {string} Iso date string
+*/
 function generateBirthDate(minAge, maxAge){
     const today = new Date();
     const yearMs = 365.25*24*60*60*1000;
