@@ -7,8 +7,6 @@
  * @returns {object} containing the statistics
  */
 export function main(dtoIn) {
-  //TODO code
-  //let dtoOut = exMain(dtoIn);
   const employees = generateEmployeeData(dtoIn);
   const dtoOut = getEmployeeChartContent(employees);
   return dtoOut;
@@ -20,8 +18,6 @@ export function main(dtoIn) {
  * @returns {Array} of employees
  */
 export function generateEmployeeData(dtoIn) {
-  //TODO code
-  //let dtoOut = exGenerateEmployeeData(dtoIn);
     const dtoOut = [];
 
     const mNames = ["Jan", "Petr", "Tomas", "Standa", "Pavel", "Jirka", "Martin", "Michal"];
@@ -59,7 +55,7 @@ export function generateEmployeeData(dtoIn) {
  * @param {number} maxAge 
  * @returns {string} Iso date string
 */
-function generateBirthDate(minAge, maxAge){
+export function generateBirthDate(minAge, maxAge){
     const today = new Date();
     const yearMs = 365.25*24*60*60*1000;
 
@@ -78,8 +74,6 @@ function generateBirthDate(minAge, maxAge){
  * @returns {object} frequencies of the employee names
  */
 export function getEmployeeChartContent(employees) {
-  //TODO code
-  //let dtoOut = exgetEmployeeChartContent(employees);
   const kategorie = {
         all: {},
         male: {},
@@ -133,4 +127,3 @@ export function getEmployeeChartContent(employees) {
     };
 }
 
-export { main, generateEmployeeData, generateBirthDate, getEmployeeChartContent };
