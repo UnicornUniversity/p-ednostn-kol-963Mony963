@@ -115,8 +115,8 @@ export function getEmployeeChartContent(employees) {
 
 /**
  * Converts to a format {label, value} and sorts
- * @param {Object} obj
- * @returns {Array<{label: string, value: number}>}
+ * @param {Object} obj with counts of names
+ * @returns {Array<{label: string, value: number}>} array of chart data
  */
 export function formatAndSortData(obj){
     const res = [];
