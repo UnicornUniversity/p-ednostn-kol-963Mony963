@@ -103,14 +103,12 @@ export function getEmployeeChartContent(employees) {
     }
 
     return {
-        dtoOut: {
-            chartData: {
-                all: formatAndSortData(kategorie.all),
-                male: formatAndSortData(kategorie.male),
-                female: formatAndSortData(kategorie.female),
-                femalePartTime: formatAndSortData(kategorie.femalePartTime),
-                maleFullTime: formatAndSortData(kategorie.maleFullTime)
-            }
+        chartData: {
+            all: formatAndSortData(kategorie.all),
+            male: formatAndSortData(kategorie.male),
+            female: formatAndSortData(kategorie.female),
+            femalePartTime: formatAndSortData(kategorie.femalePartTime),
+            maleFullTime: formatAndSortData(kategorie.maleFullTime)
         }
     };
 }
