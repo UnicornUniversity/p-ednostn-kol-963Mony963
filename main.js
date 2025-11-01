@@ -51,8 +51,8 @@ export function generateEmployeeData(dtoIn) {
 
 /**
  * Generate random age from <minAge;maxAge>
- * @param {number} minAge 
- * @param {number} maxAge 
+ * @param {number} minAge interval starts at
+ * @param {number} maxAge interval ends at
  * @returns {string} Iso date string
 */
 export function generateBirthDate(minAge, maxAge){
