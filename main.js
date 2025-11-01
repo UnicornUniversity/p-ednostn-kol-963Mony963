@@ -51,6 +51,7 @@ export function generateEmployeeData(dtoIn) {
 
 /**
  * Generate random age from <minAge;maxAge>
+ * 
  * @param {number} minAge interval starts at
  * @param {number} maxAge interval ends at
  * @returns {string} Iso date string
@@ -115,7 +116,7 @@ export function getEmployeeChartContent(employees) {
 
 /**
  * Converts to a format {label, value} and sorts
- * @param {Object} obj with counts of names
+ * @param {object} obj with counts of names
  * @returns {Array<{label: string, value: number}>} array of chart data
  */
 export function formatAndSortData(obj){
