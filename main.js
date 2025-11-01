@@ -51,11 +51,10 @@ export function generateEmployeeData(dtoIn) {
 
 /**
  * Generate random age from <minAge;maxAge>
- * 
  * @param {number} minAge interval starts at
  * @param {number} maxAge interval ends at
  * @returns {string} Iso date string
-*/
+ */
 export function generateBirthDate(minAge, maxAge){
     const today = new Date();
     const yearMs = 365.25*24*60*60*1000;
