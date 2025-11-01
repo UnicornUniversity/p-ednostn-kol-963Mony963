@@ -1,22 +1,10 @@
-//TODO add imports if needed
-//TODO doc
-/**
- * The main function which calls the application. 
- * This app generates employee data and returns statistic chart data
- * @param {object} dtoIn contains count of employees, age limit of employees {min, max}
- * @returns {object} containing the statistics
- */
+
 export function main(dtoIn) {
   const employees = generateEmployeeData(dtoIn);
   const dtoOut = getEmployeeChartContent(employees);
   return dtoOut;
 }
 
-/**
- * Function generates an array of objects with random employee data - names, surnames, genders, workloads and birthdates
- * @param {object} dtoIn contains count of employees, age limit of employees {min, max}
- * @returns {Array} of employees
- */
 export function generateEmployeeData(dtoIn) {
     const dtoOut = [];
 
@@ -42,19 +30,13 @@ export function generateEmployeeData(dtoIn) {
         }
 
         const workload = workloads[Math.floor(Math.random()*workloads.length)];
-        const birthDate = generateBirthDate(dtoIn.age.min, dtoIn.age.max);
+        const birthdate = generateBirthDate(dtoIn.age.min, dtoIn.age.max);
 
-        dtoOut.push({name, surname, gender, birthDate, workload});
+        dtoOut.push({name, surname, gender, birthdate, workload});
     }
   return dtoOut;
 }
 
-/**
- * Generate random age from <minAge;maxAge>
- * @param {number} minAge 
- * @param {number} maxAge 
- * @returns {string} Iso date string
-*/
 export function generateBirthDate(minAge, maxAge){
     const today = new Date();
     const yearMs = 365.25*24*60*60*1000;
@@ -62,17 +44,12 @@ export function generateBirthDate(minAge, maxAge){
     const minDate = new Date(today.getTime() - (maxAge*yearMs));
     const maxDate = new Date(today.getTime() - (minAge*yearMs));
 
-    const randomTime = minDate.getTime()+(Math.random()*(maxDate.getTime()-minDate.getTime()+1));
+    const randomTime = minDate.getTime()+Math.floor(Math.random()*(maxDate.getTime()-minDate.getTime()+1));
     const randomDate = new Date(randomTime);
 
     return randomDate.toISOString();
 }
 
-/**
- * Generate chart data showing counts of different names in each category
- * @param {Array} employees containing all the mocked employee data
- * @returns {object} frequencies of the employee names
- */
 export function getEmployeeChartContent(employees) {
   const kategorie = {
         all: {},
@@ -112,20 +89,15 @@ export function getEmployeeChartContent(employees) {
         }
     };
 }
-/**
- * Converts to a format {label, value} and sorts
- * @param {Object} obj
- * @returns {Array<{label: string, value: number}>}
- */
+
 export function formatAndSortData(obj){
-        const res = [];
+    const res = [];
 
-        for(const key in obj){
-            res.push({label: key, value: obj[key]});
-        }
-
-        res.sort((a,b) => b.value-a.value);
-
-        return res;
+    for(const key in obj){
+        res.push({label: key, value: obj[key]});
     }
 
+    res.sort((a,b) => b.value-a.value);
+
+    return res;
+}
