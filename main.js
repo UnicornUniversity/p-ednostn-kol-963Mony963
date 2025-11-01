@@ -62,7 +62,7 @@ export function generateBirthDate(minAge, maxAge){
     const minDate = new Date(today.getTime() - (maxAge*yearMs));
     const maxDate = new Date(today.getTime() - (minAge*yearMs));
 
-    const randomTime = minDate.getTime()+(Math.random()*(maxDate.getTime()-minDate.getTime()));
+    const randomTime = minDate.getTime()+(Math.random()*(maxDate.getTime()-minDate.getTime()+1));
     const randomDate = new Date(randomTime);
 
     return randomDate.toISOString();
